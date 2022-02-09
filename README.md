@@ -15,6 +15,10 @@ IPE is a simple tool for analyzing IP addresses. With IPE you can find out the s
 - [PyQt5](https://pypi.org/project/PyQt5/)
 
 ### First Start
+- Open any editor
+- Open ```settings.json```
+- Here you can now cutomize your theme (dark & light) and font (currently ony Segeo UI).
+
 - Open any terminal application
 - Type ```python setup.py```
 
@@ -23,13 +27,26 @@ IPE is a simple tool for analyzing IP addresses. With IPE you can find out the s
 - Type ```python app.py```
 
 ### Images
-![Image](https://i.postimg.cc/DwF5MsDM/image.png)
+![Dark Theme](https://i.postimg.cc/DwF5MsDM/image.png)
+![Light Theme](https://i.postimg.cc/7YHQPhSc/image.png)
 
 ## Authors
 [@FledPaul](https://twitter.com/dompizzie)
 
 ## Version History
-
+- 0.4
+  - Added JSON File
+  - Font & Theme Can Now Be Changed In ```settings.json```
+- 0.3
+  - Changed Font (Segeo UI)
+  - Added Placeholder
+  - Reduced Width (Input & Button)
+  - Displayed Inline (Input & Button)
+- 0.2
+  - Changed Window Title
+  - Changed Font (Arial)
+  - Increased Padding (Title & Description)
+  - Increased Font Weight (Input)
 - 0.1
   - Initial Release
 
