@@ -23,7 +23,7 @@ IPE is a simple tool for analyzing IP addresses. With IPE you can find out the s
 - Type ```python app.py```
 
 ### Images
-![Image](https://i.postimg.cc/nLrWDQmX/Bild-2022-02-08-203937.png)
+![Image](https://i.postimg.cc/DwF5MsDM/image.png)
 
 ## Authors
 [@FledPaul](https://twitter.com/dompizzie)
