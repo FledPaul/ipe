@@ -17,7 +17,7 @@ IPE is a simple tool for analyzing IP addresses. With IPE you can find out the s
 ### First Start
 - Open any editor
 - Open ```settings.json```
-- Here you can now cutomize your theme (dark & light) and font (currently ony Segeo UI).
+- Here you can now cutomize your theme (dark & light) and font (currently only Segeo UI).
 
 - Open any terminal application
 - Type ```python setup.py```
