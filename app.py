@@ -17,7 +17,7 @@ class Window(QMainWindow):
         super().__init__()
 
         #* GUI Styling
-        self.setWindowTitle('Internet-Protocol Information Tool')
+        self.setWindowTitle('IPE - Internet Protocol Information Tool')
         self.setFixedHeight(415)
         self.setFixedWidth(700)
         self.setStyleSheet('background-color: #0D0D0D')
@@ -26,13 +26,13 @@ class Window(QMainWindow):
         self.ip_input = QLineEdit(self)
         self.ip_input.resize(650, 50)
         self.ip_input.move(25, 25)
-        self.ip_input.setStyleSheet('background-color: #222222; border: none; border-radius: 15px; padding-left: 10px; padding-right: 10px; font-size: 15px; color: #FFFFFF; font-family: sans-serif; font-weight: 700;')
+        self.ip_input.setStyleSheet('background-color: #222222; border: none; border-radius: 15px; padding-left: 10px; padding-right: 10px; font-size: 15px; color: #FFFFFF; font-weight: 700;')
 
         #* Scan Button
         self.ip_scan = QPushButton('Scan', self)
         self.ip_scan.resize(650, 50)
         self.ip_scan.move(25, 100)
-        self.ip_scan.setStyleSheet('background-color: #2361FF; border: none; color: #FFF; font-size: 15px; font-weight: 700; border-radius: 15px;')
+        self.ip_scan.setStyleSheet('background-color: #2361FF; border: none; color: #FFF; font-size: 15px; font-weight: 800; border-radius: 15px;')
 
         #* Horizontal Line
         self.line = QLabel(self)
@@ -53,14 +53,14 @@ class Window(QMainWindow):
         self.location_title = QLabel(self)
         self.location_title.setText('Location')
         self.location_title.resize(325, 24)
-        self.location_title.move(40, 209)
+        self.location_title.move(45, 214)
         self.location_title.setStyleSheet('color: #FFF; background-color: transparent; font-weight: 700; font-size: 20px;')
 
         #* Description
         self.location_desc = QLabel(self)
         self.location_desc.setText('-')
         self.location_desc.resize(325, 25)
-        self.location_desc.move(40, 245)
+        self.location_desc.move(45, 245)
         self.location_desc.setStyleSheet('color: #FFF; background-color: transparent; font-weight: 400; font-size: 18px;')
 
 
@@ -76,14 +76,14 @@ class Window(QMainWindow):
         self.provider_title = QLabel(self)
         self.provider_title.setText('Provider')
         self.provider_title.resize(325, 24)
-        self.provider_title.move(375, 209)
+        self.provider_title.move(380, 214)
         self.provider_title.setStyleSheet('color: #FFF; background-color: transparent; font-weight: 700; font-size: 20px;')
 
         #* Description
         self.provider_desc = QLabel(self)
         self.provider_desc.setText('-')
         self.provider_desc.resize(325, 25)
-        self.provider_desc.move(375, 245)
+        self.provider_desc.move(380, 245)
         self.provider_desc.setStyleSheet('color: #FFF; background-color: transparent; font-weight: 400; font-size: 18px;')
 
 
@@ -99,14 +99,14 @@ class Window(QMainWindow):
         self.timezone_title = QLabel(self)
         self.timezone_title.setText('Local Time')
         self.timezone_title.resize(325, 24)
-        self.timezone_title.move(40, 314)
+        self.timezone_title.move(45, 319)
         self.timezone_title.setStyleSheet('color: #FFF; background-color: transparent; font-weight: 700; font-size: 20px;')
 
         #* Description
         self.timezone_desc = QLabel(self)
         self.timezone_desc.setText('-')
         self.timezone_desc.resize(325, 25)
-        self.timezone_desc.move(40, 350)
+        self.timezone_desc.move(45, 350)
         self.timezone_desc.setStyleSheet('color: #FFF; background-color: transparent; font-weight: 400; font-size: 18px;')
 
 
@@ -122,20 +122,41 @@ class Window(QMainWindow):
         self.loc_title = QLabel(self)
         self.loc_title.setText('Long- & Latitude')
         self.loc_title.resize(325, 24)
-        self.loc_title.move(375, 314)
+        self.loc_title.move(380, 319)
         self.loc_title.setStyleSheet('color: #FFF; background-color: transparent; font-weight: 700; font-size: 20px;')
 
         #* Description
         self.loc_desc = QLabel(self)
         self.loc_desc.setText('-')
         self.loc_desc.resize(325, 25)
-        self.loc_desc.move(375, 350)
+        self.loc_desc.move(380, 350)
         self.loc_desc.setStyleSheet('color: #FFF; background-color: transparent; font-weight: 400; font-size: 18px;')
-
+        
+        #* Set Font
+        self.ip_input.setFont(QFont('Arial', 10))
+        self.ip_scan.setFont(QFont('Arial', 10))
+        self.location_title.setFont(QFont('Arial', 10))
+        self.location_desc.setFont(QFont('Arial', 10))
+        self.provider_title.setFont(QFont('Arial', 10))
+        self.provider_desc.setFont(QFont('Arial', 10))
+        self.timezone_title.setFont(QFont('Arial', 10))
+        self.timezone_desc.setFont(QFont('Arial', 10))
+        self.loc_title.setFont(QFont('Arial', 10))
+        self.loc_desc.setFont(QFont('Arial', 10))
 
         #! Scan Function
         def scan_ip():
-            ip = self.ip_input.text()
+            temp_ip = self.ip_input.text()
+
+            #! Replace Spaces
+            ip = str(temp_ip).replace(' ', '')
+
+            #! Check IP
+            if ip == '':
+                print('Error : Input Empty')
+                time.sleep(2)
+                quit()
+
 
             #* Get Geolocation / Provider / Timezone
             url = 'https://ipinfo.io/'+ip
