@@ -17,6 +17,7 @@ with open('settings.json') as json_file:
     #* Variables
     theme = settings['theme']
     font = settings['font']
+    font = str(font)
 
     #* Theme
     themes = ['dark', 'light']
@@ -42,7 +43,7 @@ with open('settings.json') as json_file:
         quit()
 
     #* Fonts
-    fonts = ['Segeo UI']
+    fonts = ['Segoe UI']
 
     if font not in(fonts):
         print()
@@ -140,14 +141,14 @@ class Window(QMainWindow):
         self.timezone_title = QLabel(self)
         self.timezone_title.setText('Local Time')
         self.timezone_title.resize(325, 24)
-        self.timezone_title.move(45, 244)
+        self.timezone_title.move(45, 249)
         self.timezone_title.setStyleSheet('color: '+color+'; background-color: transparent; font-weight: 700; font-size: 20px;')
 
         #* Description
         self.timezone_desc = QLabel(self)
         self.timezone_desc.setText('-')
         self.timezone_desc.resize(325, 25)
-        self.timezone_desc.move(45, 275)
+        self.timezone_desc.move(45, 280)
         self.timezone_desc.setStyleSheet('color: '+color+'; background-color: transparent; font-weight: 400; font-size: 18px;')
 
 
@@ -163,14 +164,14 @@ class Window(QMainWindow):
         self.loc_title = QLabel(self)
         self.loc_title.setText('Long- & Latitude')
         self.loc_title.resize(325, 28)
-        self.loc_title.move(380, 244)
+        self.loc_title.move(380, 249)
         self.loc_title.setStyleSheet('color: '+color+'; background-color: transparent; font-weight: 700; font-size: 20px;')
 
         #* Description
         self.loc_desc = QLabel(self)
         self.loc_desc.setText('-')
         self.loc_desc.resize(325, 25)
-        self.loc_desc.move(380, 275)
+        self.loc_desc.move(380, 280)
         self.loc_desc.setStyleSheet('color: '+color+'; background-color: transparent; font-weight: 400; font-size: 18px;')
         
         #* Set Font
