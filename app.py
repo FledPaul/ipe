@@ -214,7 +214,7 @@ class Window(QMainWindow):
 
             #* Split
             tz_cn = str(timezone).split('/')[0] # Timezone Continent
-            tz_ct_temp = str(timezone).split('/')[1] # Timezone City200.203.105.239
+            tz_ct_temp = str(timezone).split('/')[1] # Timezone City
             tz_ct = str(tz_ct_temp).replace('_', ' ')
             temp_timezone = tz_cn+' / '+tz_ct # Temp Timezone
             st_provider = str(temp_provider).split(' ')[1] # Provider
