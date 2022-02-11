@@ -34,6 +34,8 @@ IPE is a simple tool for analyzing IP addresses. With IPE you can find out the s
 [@FledPaul](https://twitter.com/dompizzie)
 
 ## Version History
+- 0.4.2
+  - Some Bugs Fixed
 - 0.4.1
   - Some Bugs Fixed
 - 0.4
